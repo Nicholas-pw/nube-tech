@@ -1,0 +1,342 @@
+/* Estilos gerais */
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Para evitar rolagem */
+    font-family: Arial, sans-serif;
+    background-color: #2c2c2c; /* Cor de fundo do cenário externo */
+}
+
+#game-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url('../assets/images/cenario_principal.png');
+    overflow: hidden;
+    text-align: center; 
+}
+
+/* Estilos para a tela de introdução */
+#intro-screen {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url(../assets/images/cenario-intro.jpg);
+}
+
+#intro-screen h1 {
+    animation: fadeInScaleUp 3s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 800px;
+    width: 1800px;
+}
+
+@keyframes fadeInScaleUp {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+#intro-screen p {
+    font-size: 50px;
+    text-align: center;
+    padding-top: 0%;
+    animation: fadeIn 6s ease-in-out;
+    color: #482b0d;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Estilos para o jogador */
+#player {
+    top: 430px;
+    left: 390px;
+    position: absolute;
+    width: 2%;
+    height: 6.4%;
+}
+
+#player.up {
+    background-image: url('../assets/images/up.png');
+    
+}
+
+#player.down {
+    background-image: url('../assets/images/down.png');
+}
+
+#player.left {
+    background-image: url('../assets/images/left.png');
+}
+
+#player.right {
+    background-image: url('../assets/images/right.png');
+}
+
+/* Estilos para o NPC */
+#npc1 /*AVÔ*/ {
+    position: absolute;
+    width: 64px;
+    height: 140px;
+    left: 1210px; /* Posição inicial do NPC */
+    top: 80px; /* Posição inicial do NPC */
+    cursor: pointer; /* Mostrar cursor de clique */
+    /*background-color: blueviolet; /* Para visualização */
+}
+
+#npc2 /*MÃE*/ {
+    position: absolute;
+    width: 64px;
+    height: 120px;
+    left: 420px; /* Posição inicial do NPC */
+    top: 320px; /* Posição inicial do NPC */
+    cursor: pointer; /* Mostrar cursor de clique */
+    /*background-color: blueviolet; /* Para visualização */
+}
+
+#npc3 /*AVÓ*/ {
+    position: absolute;
+    width: 54px;
+    height: 120px;
+    left: 357px; /* Posição inicial do NPC */
+    top: 560px; /* Posição inicial do NPC */
+    cursor: pointer; /* Mostrar cursor de clique */
+    /*background-color: blueviolet; /* Para visualização */
+}
+
+/* Estilos para a caixa de diálogo */
+#dialogue-box {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 80%;
+    text-align: left;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    display: none;
+    transition: opacity 0.3s ease;
+    font-family: 'Arial', sans-serif;
+}
+
+#dialogue-text {
+    margin-bottom: 15px;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+#dialogue-box::before {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: calc(50% - 10px);
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent rgba(0, 0, 0, 0.8) transparent;
+}
+
+/* Estilos para a cena interna */
+#indoor-scene {
+    position: absolute;
+    width: 1878px; /* Largura do jogo */
+    height: 962px; /* Altura do jogo */
+    background-image: url('../assets/images/cenario-casa.png');
+    display: none; /* Inicialmente escondido */
+}
+
+/* Estilos para a nova cena vazia */
+#empty-scene {
+    position: absolute;
+    width: 1878px;
+    height: 962px;
+    background-image: url(../assets/images/cenario_cidade.png);
+    display: none; /* Inicialmente escondido */
+}
+
+.obj{
+    position: absolute;
+}
+
+#carro{
+    left: 560px;
+    top: 20px;
+    width: 100px;
+    height: 200px;
+    /*background-color: blueviolet; /* Para visualização */
+}
+
+
+
+/* Estilos para móveis e decoração */
+.furniture {
+    position: absolute;
+}
+
+#cama {
+    width: 90px;
+    height: 120px;
+    left: 560px;
+    top: 160px;
+    /*background-color: blueviolet; /* Para visualização */
+}
+
+#cama2 {
+    width: 140px;
+    height: 170px;
+    left: 754px;
+    top: 140px;
+    /*background-color: blueviolet; /* Para visualização */
+}
+
+#cama3 {
+    width: 140px;
+    height: 170px;
+    left: 1516px;
+    top: 640px;
+    /*background-color: blueviolet; /* Para visualização */
+}
+
+#computador {
+    width: 100px;
+    height: 50px;
+    left: 40px;
+    top: 300px;
+    /*background-color: blueviolet; /* Para visualização */
+}
+
+#trofeis {
+    width: 100px;
+    height: 90px;
+    left: 40px;
+    top: 40px;
+    /*background-color: blueviolet; /* Para visualização */
+}
+
+
+/* Estilos para a porta externa */
+#door {
+    position: absolute;
+    width: 70px;
+    height: 80px;
+    left: 240px; /* Posição X da porta */
+    top: 230px; /* Posição Y da porta */
+    cursor: pointer; /* Mostrar cursor de clique */
+    /*background-color: blueviolet; /* Para visualização */
+}
+
+/* Estilos para a porta interna */
+#indoor-door {
+    position: absolute;
+    width: 70px;
+    height: 20px;
+    left: 645px; /* Posição X da porta */
+    top: 880px; /* Posição Y da porta */
+    cursor: pointer; /* Mostrar cursor de clique */
+    border-radius: 5px; /* Borda arredondada */
+    /*background-color: blueviolet; /* Para visualização */
+}
+
+
+
+/* Estilos para o pub e a porta do pub */
+#loja {
+    position: absolute;
+    /*background-color: blueviolet; /* Para visualização */
+}
+
+#loja-door {
+    position: absolute;
+    width: 60px;
+    height: 80px;
+    left: 1350px; /* Posição X da porta */
+    top: 400px; /* Posição Y da porta */
+    cursor: pointer; /* Mostrar cursor de clique */
+    background-color: blueviolet; /* Para visualização */
+}
+
+/* Estilos para a cena interna do pub */
+#loja-indoor-scene {
+    position: absolute;
+    width: 1878px; /* Largura do jogo */
+    height: 962px; /* Altura do jogo */
+    background-image: url('../assets/images/interior_loja.png');
+    display: none; /* Inicialmente escondido */
+}
+
+/* Estilos para a porta interna do pub */
+#loja-indoor-door {
+    position: absolute;
+    width: 70px;
+    height: 20px;
+    left: 900px; /* Posição X da porta interna do pub */
+    top: 870px;/* Posição Y da porta interna do pub */
+    cursor: pointer; /* Mostrar cursor de clique */
+    background-color: blueviolet; /* Para visualização */
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Estilos para o pub e a porta do pub */
+#pub {
+    position: absolute;
+    /*background-color: blueviolet; /* Para visualização */
+}
+
+#pub-door {
+    position: absolute;
+    width: 60px;
+    height: 80px;
+    left: 578px; /* Posição X da porta */
+    top: 400px; /* Posição Y da porta */
+    cursor: pointer; /* Mostrar cursor de clique */
+    /*background-color: blueviolet; /* Para visualização */
+}
+
+/* Estilos para a cena interna do pub */
+#pub-indoor-scene {
+    position: absolute;
+    width: 1878px; /* Largura do jogo */
+    height: 962px; /* Altura do jogo */
+    background-image: url('../assets/images/interior_padaria.png');
+    display: none; /* Inicialmente escondido */
+}
+
+/* Estilos para a porta interna do pub */
+#pub-indoor-door {
+    position: absolute;
+    width: 70px;
+    height: 20px;
+    left: 900px; /* Posição X da porta interna do pub */
+    top: 870px;/* Posição Y da porta interna do pub */
+    cursor: pointer; /* Mostrar cursor de clique */
+    background-color: blueviolet; /* Para visualização */
+}
