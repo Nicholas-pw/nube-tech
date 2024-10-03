@@ -5,16 +5,17 @@ body {
     align-items: center;
     flex-direction: column;
     height: 100vh;
-    background-color: #282c34;
-    color: #fff;
+    background-color: #2c3e50;
+    color: #ecf0f1;
     font-family: 'Arial', sans-serif;
     margin: 0;
     overflow: hidden;
 }
 
 h1 {
-    font-size: 2rem;
+    font-size: 2.5rem;
     margin-bottom: 20px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
 }
 
 /* Estilos da Capa */
@@ -25,39 +26,40 @@ h1 {
     align-items: center;
     width: 100vw;
     height: 100vh;
-    background: linear-gradient(135deg, rgba(50, 50, 100, 0.8), rgba(100, 100, 200, 0.8));
+    background: linear-gradient(135deg, rgba(52, 73, 94, 0.9), rgba(41, 128, 185, 0.9));
     color: #fff;
     position: absolute;
     top: 0;
     left: 0;
     z-index: 10; /* Fica acima de outros elementos */
-    opacity: 0; /* Começa invisível */
+    opacity: 1; /* Agora começa visível */
     animation: fadeIn 0.5s forwards; /* Animação ao aparecer */
 }
 
 #cover h1 {
-    font-size: 3rem;
+    font-size: 4rem;
     text-align: center;
     margin-bottom: 30px;
-    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+    text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.5);
 }
 
 #cover button {
-    margin: 10px;
+    margin: 15px;
     padding: 15px 30px;
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     border: none;
-    background-color: #007BFF;
+    background-color: #3498db;
     color: white;
-    border-radius: 10px;
+    border-radius: 8px;
     cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.7);
 }
 
 #cover button:hover {
-    background-color: #0056b3;
+    background-color: #2980b9;
     transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.9);
 }
 
 /* Estilo do Timer */
@@ -77,14 +79,16 @@ h1 {
     padding: 10px 15px;
     font-size: 1rem;
     border: none;
-    background-color: #007BFF;
+    background-color: #3498db;
     color: white;
     border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
 }
 
 #controls button:hover {
-    background-color: #0056b3;
+    background-color: #2980b9;
+    transform: scale(1.05);
 }
 
 /* Estilos do Jogo */
@@ -105,12 +109,13 @@ h1 {
     position: relative;
     transform: scale(1);
     transform-style: preserve-3d;
-    transition: transform 0.5s, box-shadow 0.3s; /* Adicionando sombra na transição */
+    transition: transform 0.5s, box-shadow 0.3s;
     cursor: pointer;
+    border-radius: 8px; /* Bordas arredondadas para as cartas */
 }
 
 .memory-card:hover {
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5); /* Efeito de sombra ao passar o mouse */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6); /* Efeito de sombra ao passar o mouse */
 }
 
 .memory-card img {
@@ -118,6 +123,7 @@ h1 {
     height: 100%;
     position: absolute;
     backface-visibility: hidden;
+    border-radius: 8px; /* Bordas arredondadas para as imagens */
 }
 
 .front-face {
@@ -138,12 +144,13 @@ h1 {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.9);
     padding: 30px;
     border-radius: 10px;
     text-align: center;
     color: #fff;
-    display: none; /* Garantir que a mensagem não apareça inicialmente */
+    display: none;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.9);
 }
 
 #result-message.show {
@@ -158,20 +165,32 @@ h1 {
 
 #result-message button {
     font-size: 1.2rem;
-    padding: 10px 20px;
+    padding: 10;
+        padding: 10px 20px;
+    background-color: #3498db;
+    color: white;
     border: none;
-    background-color: #4CAF50;
-    color: #fff;
-    cursor: pointer;
     border-radius: 5px;
+    cursor: pointer;
     transition: background-color 0.3s, transform 0.2s;
 }
 
 #result-message button:hover {
-    background-color: #45a049;
+    background-color: #2980b9;
     transform: scale(1.05);
 }
 
+/* Animação para a Capa */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Estilos gerais para transições e animações */
 .hidden {
     display: none;
 }
@@ -180,28 +199,15 @@ h1 {
     display: block;
 }
 
-@media (max-width: 600px) {
-    h1 {
-        font-size: 1.5rem;
-    }
-
-    .memory-game {
-        width: 100vw;
-        height: 100vw;
-    }
-
-    .memory-card {
-        width: calc(33.33% - 10px);
-        height: calc(33.33% - 10px);
-    }
+/* Adicionando uma borda ao redor do jogo */
+.memory-game {
+    border: 5px solid #2980b9;
+    border-radius: 10px; /* Arredondar os cantos do contêiner do jogo */
+    overflow: hidden; /* Garante que as cartas não saiam do contêiner */
 }
 
-/* Animação de Fade In */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+/* Efeitos de foco para botões */
+button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.5); /* Efeito de foco suave */
 }
