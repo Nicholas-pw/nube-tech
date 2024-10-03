@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NubeTech | NubeMemória</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Capa do Jogo -->
+    <div id="cover" class="cover">
+        <h1>NubeMemória</h1>
+        <button id="play-btn">Jogar</button>
+        <button id="back-btn-cover">Voltar</button>
+    </div>
+
+    <h1>NubeMemória</h1>
+    <div id="timer">Tempo: 30s</div>
+    
+    <!-- Controles do jogo -->
+    <div id="controls">
+        <button id="pause-btn">Pausar</button>
+        <button id="reset-btn">Reiniciar</button>
+    </div>
+
+    <!-- Container das cartas -->
+    <div class="memory-game">
+        <div class="memory-card" data-framework="nunu">
+            <img class="front-face" src="nunu-nubememoria.png" alt="Nunu">
+            <img class="back-face" src="capa-nubememoria.png">
+        </div>
+        <div class="memory-card" data-framework="nunu">
+            <img class="front-face" src="nunu-nubememoria.png" alt="Nunu">
+            <img class="back-face" src="capa-nubememoria.png">
+        </div>
+
+        <div class="memory-card" data-framework="arnaldo">
+            <img class="front-face" src="arnaldo-nubememoria.png" alt="Arnaldo">
+            <img class="back-face" src="capa-nubememoria.png">
+        </div>
+        <div class="memory-card" data-framework="arnaldo">
+            <img class="front-face" src="arnaldo-nubememoria.png" alt="Arnaldo">
+            <img class="back-face" src="capa-nubememoria.png">
+        </div>
+
+        <div class="memory-card" data-framework="florence">
+            <img class="front-face" src="florence-nubememoria.png" alt="Florence">
+            <img class="back-face" src="capa-nubememoria.png">
+        </div>
+        <div class="memory-card" data-framework="florence">
+            <img class="front-face" src="florence-nubememoria.png" alt="Florence">
+            <img class="back-face" src="capa-nubememoria.png">
+        </div>
+
+        <div class="memory-card" data-framework="celestia">
+            <img class="front-face" src="celestia-nubememoria.png" alt="Celestia">
+            <img class="back-face" src="capa-nubememoria.png">
+        </div>
+        <div class="memory-card" data-framework="celestia">
+            <img class="front-face" src="celestia-nubememoria.png" alt="Celestia">
+            <img class="back-face" src="capa-nubememoria.png">
+        </div>
+    </div>
+
+    <!-- Mensagem de Vitória ou Derrota -->
+    <div id="result-message" class="hidden">
+        <h2 id="result-text"></h2>
+        <button onclick="restartGame()">Jogar Novamente</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
