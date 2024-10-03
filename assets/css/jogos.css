@@ -6,7 +6,7 @@
 
 body {
     font-family: 'Roboto', sans-serif;
-    background: linear-gradient(135deg, #3d86c2, #10278f);
+    background: linear-gradient(135deg, #2b5e88, #10278f);
     color: #ffffff;
     display: flex;
     flex-direction: column;
@@ -23,7 +23,7 @@ header {
     width: 90%;
     max-width: 900px;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
-    animation: fadeIn 1s ease-in-out;
+    animation: fadeIn 2s ease-in-out;
 }
 
 @keyframes fadeIn {
