@@ -701,6 +701,12 @@ img:hover{
   -webkit-text-stroke-color: black;
 }
 
+@media (max-width: 600px) {
+  .contact-section h2 .contact-style{
+    font-size: 25px;
+  }
+}
+
 /* Rodapé */
 .footer {
   background-color: #222;
@@ -736,7 +742,7 @@ img:hover{
 
 @media (max-width: 600px) {
   .footer p {
-    font-size: 10px;
+    font-size: 20px;
   }
 
   .footer .social-links a {
