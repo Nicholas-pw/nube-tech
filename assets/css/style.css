@@ -273,8 +273,14 @@ nav .logo a {
   border-radius: 20px;
 }
 
+.h2-about h2{
+  color: #0076ad;
+  -webkit-text-stroke-width: 3px;
+  -webkit-text-stroke-color: black;
+}
+
 .about h2 {
-  font-size: 50px;
+  font-size: 70px;
 }
 
 .about p {
@@ -319,17 +325,25 @@ nav .logo a {
 
 .news-section h2 {
   color: #fff;
-  font-size: 50px;
+  font-size: 70px;
+  line-height: 70px;
+}
+
+.h2-news h2{
+  color: #0076ad;
+  -webkit-text-stroke-width: 3px;
+  -webkit-text-stroke-color: black;
+  line-height: 70px;
 }
 
 .news-card h3 {
-  font-size: 24px;
+  font-size: 34px;
   color: #333;
 }
 
 .news-card p {
   color: #666;
-  font-size: 16px;
+  font-size: 22px;
 }
 
 .news-card:hover {
@@ -537,10 +551,19 @@ img:hover{
 }
 
 .testimonials-section h2 {
+  line-height: 80px;
   margin-bottom: 20px;
-  font-size: 50px;
+  font-size: 70px;
   color: #fff;
   animation: fadeIn 2s ease-in-out;
+}
+
+.testimonials-section .h2-depoimentos h2{
+  color: #0076ad;
+  -webkit-text-stroke-width: 3px;
+  -webkit-text-stroke-color: black;
+  font-size: 80px;
+  line-height: 80px;
 }
 
 .testimonial {
@@ -573,7 +596,7 @@ img:hover{
 }
 
 .team-section h2 {
-  font-size: 40px;
+  font-size: 70px;
   margin-bottom: 40px;
   font-weight: 700;
   text-transform: uppercase;
@@ -634,10 +657,6 @@ img:hover{
 }
 
 @media (max-width: 480px) {
-  .team-section h2 {
-    font-size: 28px;
-    /* Reduzir o tamanho do título em telas muito pequenas */
-  }
 
   .team-member h3 {
     font-size: 20px;
@@ -665,7 +684,7 @@ img:hover{
 
 .contact-section h2 {
   color: #0076ad;
-  font-size: 45px;
+  font-size: 70px;
   -webkit-text-stroke-width: 3px;
   -webkit-text-stroke-color: black;
 }
