@@ -569,12 +569,12 @@ img:hover{
   -webkit-text-stroke-width: 3px;
   -webkit-text-stroke-color: black;
   font-size: 80px;
-  line-height: 80px;
+  line-height: 70px;
 }
 
 @media (max-width: 600px) {
   .h2-depoimentos h2{
-    font-size: 67px;
+    font-size: 60px;
   }
 }
 
