@@ -133,7 +133,7 @@ playButton.addEventListener('click', () => {
 
 // Evento de clique no botão "Voltar"
 backButtonCover.addEventListener('click', () => {
-    window.location.href = "outra_pagina.html"; // Substitua pelo URL da sua outra página
+    window.location.href = "index.html";
 });
 
 // Evento de clique no botão "Pausar"

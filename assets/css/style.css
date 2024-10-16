@@ -673,8 +673,9 @@ img:hover{
   font-size: 25px;
 }
 
-.contact-section p .contact-style{
+.contact-section .contact-style{
   color: #0076ad;
+  font-size: 30px;
   -webkit-text-stroke-width: 3px;
   -webkit-text-stroke-color: black;
 }
