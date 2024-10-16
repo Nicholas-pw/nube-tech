@@ -670,13 +670,13 @@ img:hover{
 
 .contact-section p {
   color: #ccc;
-  font-size: 70px;
+  font-size: 25px;
 }
 
 .contact-section h2 .contact-style{
   color: #0076ad;
-  font-size: 70px;
-  -webkit-text-stroke-width: 1px;
+  font-size: 30px;
+  -webkit-text-stroke-width: 3px;
   -webkit-text-stroke-color: black;
 }
 
