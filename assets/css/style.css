@@ -341,6 +341,12 @@ nav .logo a {
   color: #333;
 }
 
+@media (max-width: 600px) {
+  .news-card h3 {
+    font-size: 25px;
+  }
+}
+
 .news-card p {
   color: #666;
   font-size: 22px;
@@ -558,12 +564,18 @@ img:hover{
   animation: fadeIn 2s ease-in-out;
 }
 
-.testimonials-section .h2-depoimentos h2{
+.h2-depoimentos h2{
   color: #0076ad;
   -webkit-text-stroke-width: 3px;
   -webkit-text-stroke-color: black;
   font-size: 80px;
   line-height: 80px;
+}
+
+@media (max-width: 600px) {
+  .h2-depoimentos h2{
+    font-size: 67px;
+  }
 }
 
 .testimonial {
@@ -829,11 +841,13 @@ img:hover{
 /*Botão seta*/
 .icon a img {
   position: absolute;
-  top: 92%;
-  left: 49%;
+  top: 92%; /* ou ajuste conforme necessário */
+  left: 50%;
+  transform: translateX(-50%);
   width: 60px;
   color: #fff;
 }
+
 
 /*Botão para subir a pagina*/
 .btn {
