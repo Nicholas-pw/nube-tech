@@ -13,6 +13,7 @@ body {
     min-height: 100vh;
 }
 
+/* Landing Page */
 header {
     text-align: center;
     padding: 5rem 1rem;
@@ -35,6 +36,7 @@ header {
     }
 }
 
+/* Estiliza o h1 */
 h1 {
     font-size: 3rem;
     margin-bottom: 1rem;
@@ -42,11 +44,13 @@ h1 {
     text-transform: uppercase;
 }
 
+/* Estiliza o p */
 p {
     font-size: 1.5rem;
     margin-bottom: 2rem;
 }
 
+/* Estiliza o Botão "Comece a Jogar" */
 .cta-button {
     background-color: #ff4757;
     color: white;
@@ -58,11 +62,13 @@ p {
     transition: background-color 0.3s, transform 0.3s;
 }
 
+/* Hover Do botão */
 .cta-button:hover {
     background-color: #854c3d;
     transform: scale(1.05);
 }
 
+/* Estiliza Os Cards Jogos */
 .card-container {
     display: flex;
     justify-content: center;
@@ -70,6 +76,7 @@ p {
     padding: 2rem;
 }
 
+/* Card Jogos */
 .card {
     background: rgba(255, 255, 255, 0.075);
     border-radius: 15px;
@@ -83,6 +90,7 @@ p {
     overflow: hidden;
 }
 
+/* Estiliza a Imagem Card */
 .card-image {
     height: 200px;
     background-size: cover;
@@ -100,16 +108,19 @@ p {
     transform: scale(1.1);
 }
 
+/* Estiliza o h2 */
 h2 {
     margin: 1rem 0;
     font-size: 1.8rem;
 }
 
+/* Estiliza o i */
 h2 i {
     color: #ff4757;
     margin-left: 0.5rem;
 }
 
+/* Botão "Jogar" */
 button {
     background-color: #2437a1;
     color: white;
@@ -122,11 +133,13 @@ button {
     font-size: 20px;
 }
 
+/* Hover Do botão */
 button:hover {
     background-color: #5575cf;
     transform: scale(1.05);
 }
 
+/* Section Rodapé */
 footer {
     text-align: center;
     padding: 1rem;
@@ -139,6 +152,7 @@ footer {
     margin-top: auto;
 }
 
+/* Responsivo Classe .card-container Para Telas Menores Que 768px*/
 @media (max-width: 768px) {
     .card-container {
         flex-direction: column;
@@ -146,11 +160,13 @@ footer {
     }
 }
 
+/* Estiliza o Modal */
 .hidden {
     display: none;  /* Certifica-se que o modal está completamente escondido */
     visibility: hidden;
 }
 
+/* Estiliza a Mensagem "Iniciando Jogo..." */
 .message {
     position: fixed;
     top: 0;
@@ -167,6 +183,7 @@ footer {
     font-family: 'Roboto', sans-serif;
 }
 
+/* Conteúdo Da Mensagem */
 .message-content {
     text-align: center;
     padding: 30px;
@@ -190,12 +207,14 @@ footer {
     }
 }
 
+/* Estiliza o Elemento p Da Mensagem "Iniciando Jogo..." */
 .message-content p {
     font-size: 1.5rem;
     color: #fff;
     margin: 0;
 }
 
+/* Efeito De Digitação */
 .typing-effect {
     display: inline-block;
     white-space: nowrap;

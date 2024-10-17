@@ -48,7 +48,7 @@ function toggleMovement(direction) {
     moveInterval = setInterval(() => {
         player.style.backgroundImage = `url(${sprites[direction][currentFrame]})`; // Define o sprite atual
         currentFrame = (currentFrame + 1) % sprites[direction].length; // Alterna os frames
-    }, 200); // Intervalo de troca de sprites
+    }, 100); // Intervalo de troca de sprites
 }
 
 // Para a animação de movimento assim que a tecla é solta
@@ -265,10 +265,10 @@ function enterPub() {
     setTimeout(() => {
         emptyScene.style.display = 'none';
         pubIndoorScene.style.display = 'block';
-        player.style.left = '900px';
+        player.style.left = '918px';
         player.style.top = '780px';
         pubIndoorScene.appendChild(player);
-    }, 1000);
+    }, 100);
 }
 
 // Função para sair do pub
@@ -285,8 +285,8 @@ function exitPub() {
     setTimeout(() => {
         pubIndoorScene.style.display = 'none';
         emptyScene.style.display = 'block';
-        player.style.left = '388px';
-        player.style.top = '480px';
+        player.style.left = '586px';
+        player.style.top = '516px';
         emptyScene.appendChild(player);
     }, 1000);
 }
@@ -326,7 +326,6 @@ function exitHouse() {
 }
 
 // Função para verificar colisão com móveis e exibir diálogos (remover a chamada do evento de movimento)
-// Esta função agora é apenas para verificar colisões ao clicar nos móveis
 function checkCollisionWithFurnitureOnClick() {
     const furnitureList = [
         { id: 'cama', dialogue: 'Esta é sua cama!' },
@@ -383,11 +382,17 @@ const npcDialogues = {
         'Tem bastante mosquito aqui! Cuidado filho passa o repelente.',
         'A vovó está fazendo uma comida muito boa, não vejo a hora de comer!'
     ],
-    'NPC 3': [
+    'Vovó Celestia': [
         'Oii meu netinho, tá com fome? A vó vai fazer um biscoitinho para você!',
         'O vovô tem cada história uma mais engraçada que a outra, e tem umas bem misteriosas!',
         'O clima tá bom para um bolinho, o que acha meu netinho?'
+    ],
+    'Sra. Aurora': [
+        'Oii você deve ser o neto do Seu Arnaldo, certo?',
+        'O seu avô é um homem muito bom, ele sempre me ajuda.',
+        'Quer um pãozinho? Acabou de sair do forno!'
     ]
+
 };
 
 // Função para mostrar o diálogo dos NPCs
@@ -434,7 +439,12 @@ document.getElementById('npc2').addEventListener('click', function() {
 
 document.getElementById('npc3').addEventListener('click', function() {
     console.log('Clicou no NPC 3');
-    showNPCDialogue('NPC 3');
+    showNPCDialogue('Vovó Celestia');
+});
+
+document.getElementById('npc4').addEventListener('click', function() {
+    console.log('Clicou no NPC 4');
+    showNPCDialogue('Sra. Aurora');
 });
 
 // Inicialização do jogo após o carregamento do DOM

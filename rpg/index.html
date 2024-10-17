@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nube Valley</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css"> <!--LINK CSS-->
     <link rel="icon" sizes="180x180" href="../assets/images/logovalley.ico">
 </head>
 <body>
+    <!--Introdução-->
     <div id="intro-screen">
         <h1><img src="../assets/images/logointro.png" alt=""></h1>
-        <p>Pressione enter para iniciar o jogo</p>
+        <p>APERTE QUALQUER TECLA PARA COMEÇAR</p>
     </div>
     <div id="game-container">
         <!--Exterior-->
@@ -18,29 +19,20 @@
             <div id="player" class="down"></div>
             <div id="npc1"></div>
             <div id="npc2"></div>
-            <div class="tree" id="tree1"></div>
-            <div class="tree" id="tree2"></div>
-            <div class="tree" id="tree3"></div>
-            <div class="tree" id="tree4"></div>
-            <div class="tree" id="tree5"></div>
-            <div class="bush" id="bush1"></div>
-            <div class="bush" id="bush2"></div>
-            <div class="bush" id="bush3"></div>
-            <div class="bush" id="bush4"></div>
-            <div class="rock" id="rock1"></div>
-            <div class="rock" id="rock2"></div>
-            <div class="rock" id="rock3"></div>
             <div class="obj" id="carro"></div>
-            <div class="obj" id="vaso-planta"></div>
-            <div class="obj" id="vaso-planta2"></div>
-            <div class="obj" id="caixotes"></div>
-            <div class="obj" id="lago"></div>
             <div id="house">
+                <div id="door"></div>
+            </div>
+        </div>
+            <!--Casa-->
+            <div id="house">
+                <!--Porta-->
                 <div id="door"></div>
             </div>
         </div>
         <!--Interior casa-->
         <div id="indoor-scene">
+            <!--NPC Celestia-->
             <div id="npc3"></div>
             <div class="furniture" id="cama"></div>
             <div class="furniture" id="cama2"></div>
@@ -52,6 +44,7 @@
         <!--Cenário secundário-->
         <div id="empty-scene" class="scene">
             <div id="empty-content">
+                <!--Padaria-->
                 <div id="pub">
                     <div id="pub-door"></div>
                 </div>
@@ -62,19 +55,18 @@
         </div>
         <!--Pub Interior-->
         <div id="pub-indoor-scene">
-            <div class="furniture" id="bar"></div>
-            <div class="furniture" id="table1"></div>
-            <div class="furniture" id="table2"></div>
+            <div id="npc4"></div>
             <div id="pub-indoor-door"></div>
             <div id="loja-indoor-door"></div>
         </div>
-
+        <!--Caixa de dialogo (npcs e moveis)-->
         <div id="dialogue-box">
             <div id="dialogue-text"></div>
         </div>
     </div>
+    <!--Musica cenarios-->
     <audio id="background-music" src="../rpg/musica-principal.mp3" loop></audio>
-    <script src="game.js"></script>
+    <script src="game.js"></script> <!--LINK JS-->
     
 </body>
 </html>
