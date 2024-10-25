@@ -49,29 +49,23 @@ header {
     padding: 2rem 1rem; /* Reduzir o padding em dispositivos móveis */
 }
 
-.responsive-video {
-    width: 100%;
-    max-width: 640px; /* Limita o tamanho máximo do vídeo */
-    height: auto; /* Mantém a proporção correta */
-    border-radius: 10px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-}
-
 /* Responsividade para telas menores (ajustando o vídeo para caber no celular) */
 @media (max-width: 768px) {
-    .responsive-video {
-        max-width: 100%; /* O vídeo ocupará 100% da largura da tela menor */
-        padding: 0 1rem; /* Adiciona um pouco de padding lateral para não encostar na borda */
-        margin: 0 auto; /* Centraliza o vídeo */
+    .video-demo {
+        display: none;
     }
 }
-
-
 
 h1 {
     font-size: 3.5rem;
     font-family: 'Poppins', sans-serif;
     text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 3rem;
+    }
 }
 
 p {
