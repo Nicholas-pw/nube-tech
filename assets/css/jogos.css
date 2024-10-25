@@ -4,21 +4,35 @@
     box-sizing: border-box;
 }
 
+/*Suavisando a Rolagem*/
+html {
+    scroll-behavior: smooth;
+}  
+
 body {
     font-family: 'Roboto', sans-serif;
-    background: linear-gradient(135deg, #1e4361, #283c99);
+    background: linear-gradient(135deg, #0f293f, #0f1b5a);
     color: #ffffff;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
 }
 
-/* Landing Page */
+#particles-js {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+}
+
 header {
     text-align: center;
     padding: 5rem 1rem;
-    background: rgba(17, 48, 105, 0.164);
-    backdrop-filter: blur(15px);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
     border-radius: 20px;
     margin: 2rem auto;
     width: 90%;
@@ -27,70 +41,85 @@ header {
     animation: fadeIn 2s ease-in-out;
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
+.video-demo {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    padding: 2rem 1rem; /* Reduzir o padding em dispositivos móveis */
+}
+
+.responsive-video {
+    width: 100%;
+    max-width: 640px; /* Limita o tamanho máximo do vídeo */
+    height: auto; /* Mantém a proporção correta */
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsividade para telas menores (ajustando o vídeo para caber no celular) */
+@media (max-width: 768px) {
+    .responsive-video {
+        max-width: 100%; /* O vídeo ocupará 100% da largura da tela menor */
+        padding: 0 1rem; /* Adiciona um pouco de padding lateral para não encostar na borda */
+        margin: 0 auto; /* Centraliza o vídeo */
     }
 }
 
-/* Estiliza o h1 */
+
+
 h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-    font-family: 'Oswald', sans-serif;
+    font-size: 3.5rem;
+    font-family: 'Poppins', sans-serif;
     text-transform: uppercase;
 }
 
-/* Estiliza o p */
 p {
     font-size: 1.5rem;
     margin-bottom: 2rem;
 }
 
-/* Estiliza o Botão "Comece a Jogar" */
 .cta-button {
-    background-color: #ff4757;
+    background-color: #0f4877;
     color: white;
-    padding: 0.8rem 2rem;
-    border: none;
-    border-radius: 5px;
-    font-size: 1.2rem;
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+    font-size: 1.3rem;
     text-decoration: none;
     transition: background-color 0.3s, transform 0.3s;
 }
 
-/* Hover Do botão */
 .cta-button:hover {
-    background-color: #854c3d;
-    transform: scale(1.05);
+    background-color: #0b3353;
+    transform: scale(1.1);
 }
 
-/* Estiliza Os Cards Jogos */
 .card-container {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    padding: 2rem;
+    padding: 1rem;
+    gap: 1rem;
 }
 
-/* Card Jogos */
 .card {
-    background: rgba(255, 255, 255, 0.075);
-    border-radius: 15px;
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
-    margin: 1rem;
+    background: rgba(85, 85, 85, 0.418);
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    margin: 0.5rem;
     padding: 1.5rem;
     text-align: center;
     transition: transform 0.3s, box-shadow 0.3s;
-    width: 300px;
+    width: 330px;
     position: relative;
     overflow: hidden;
 }
 
-/* Estiliza a Imagem Card */
+.card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
+}
+
 .card-image {
     height: 200px;
     background-size: cover;
@@ -99,142 +128,145 @@ p {
     transition: transform 0.3s;
 }
 
-.card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 12px 50px rgba(0, 0, 0, 0.5);
-}
-
 .card:hover .card-image {
     transform: scale(1.1);
 }
 
-/* Estiliza o h2 */
 h2 {
-    margin: 1rem 0;
-    font-size: 1.8rem;
+    font-size: 2rem;
+    margin-top: 1rem;
+    font-weight: 900;
+    font-family: 'Poppins', sans-serif;
+    color: #0e183b; /* Cor do título */
+    text-decoration: underline;
 }
 
-/* Estiliza o i */
 h2 i {
-    color: #ff4757;
+    color: #0a1744;
     margin-left: 0.5rem;
 }
 
-/* Botão "Jogar" */
-button {
-    background-color: #2437a1;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 0.5rem 2.5rem;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s;
-    font-weight: bold;
-    font-size: 20px;
-}
-
-/* Hover Do botão */
-button:hover {
-    background-color: #5575cf;
-    transform: scale(1.05);
-}
-
-/* Section Rodapé */
-footer {
-    text-align: center;
-    padding: 1rem;
-    padding-bottom: 0;
-    background: rgba(0, 0, 0, 0.9);
-    color: white;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-    margin-top: auto;
-}
-
-/* Responsivo Classe .card-container Para Telas Menores Que 768px*/
-@media (max-width: 768px) {
-    .card-container {
-        flex-direction: column;
-        align-items: center;
-    }
-}
-
-/* Estiliza o Modal */
 .hidden {
-    display: none;  /* Certifica-se que o modal está completamente escondido */
+    display: none;
     visibility: hidden;
 }
 
-/* Estiliza a Mensagem "Iniciando Jogo..." */
 .message {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.9); /* Fundo mais escuro para maior contraste */
+    background: rgba(0, 0, 0, 0.9);
     color: white;
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: 1000;
-    animation: fadeIn 0.7s ease-in-out; /* Animação suave ao aparecer */
-    font-family: 'Roboto', sans-serif;
+    animation: fadeIn 0.7s ease-in-out;
 }
 
-/* Conteúdo Da Mensagem */
-.message-content {
+/* Estilo para os botões */
+button {
+    background-color: #2d61ad; /* Azul suave */
+    color: #ffffff; /* Texto branco */
+    border-radius: 50px; /* Bordas arredondadas */
+    padding: 0.8rem 2rem; /* Espaçamento interno */
+    border: none; /* Remove a borda padrão */
+    cursor: pointer; /* Muda o cursor para indicar que é clicável */
+    font-size: 1.2rem; /* Tamanho da fonte */
+    font-weight: bold; /* Negrito */
+    text-transform: uppercase; /* Letras maiúsculas */
+    letter-spacing: 1px; /* Espaçamento entre letras */
+    transition: background-color 0.3s, transform 0.2s ease, box-shadow 0.3s; /* Transições suaves */
+}
+
+/* Efeito de hover para os botões */
+button:hover {
+    background-color: #234b88; /* Azul mais escuro ao passar o mouse */
+    transform: translateY(-5px); /* Levanta o botão */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Sombra ao redor */
+}
+
+/* Estilo específico para o botão "Sair da Experiência" */
+.wrap {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 100px;
+    padding-bottom: 150px;
+}
+
+.button {
+    min-width: 300px;
+    min-height: 60px;
+    display: inline-flex;
+    font-family: 'Nunito', sans-serif;
+    font-size: 22px;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
     text-align: center;
-    padding: 30px;
-    border-radius: 15px;
-    background: rgba(255, 255, 255, 0.15); /* Fundo translúcido mais forte */
-    backdrop-filter: blur(10px);
-    border: 2px solid rgba(255, 255, 255, 0.3); /* Borda mais visível */
-    width: 400px; /* Largura ajustada para caber melhor */
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5); /* Sombra dramática */
-    animation: popUp 0.7s ease-out; /* Animação de pop-up */
+    font-weight: 700;
+    color: #ccc;
+    background: #2d61ad;
+    border: none;
+    border-radius: 1000px;
+    box-shadow: 12px 12px 24px rgba(30, 51, 109, 0.64);
+    transition: all 0.3s ease-in-out 0s;
+    cursor: pointer;
+    outline: none;
+    position: relative;
+    padding: 10px;
+    top: 60px;
 }
 
-@keyframes popUp {
-    0% {
-        transform: scale(0.5);
-        opacity: 0;
-    }
-    100% {
-        transform: scale(1);
-        opacity: 1;
-    }
+.button::before {
+    content: '';
+    border-radius: 1000px;
+    min-width: calc(300px + 12px);
+    min-height: calc(60px + 12px);
+    border: 6px solid #255b6b;
+    box-shadow: 0 0 60px rgba(16, 84, 129, 0.64);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: all .3s ease-in-out 0s;
 }
 
-/* Estiliza o Elemento p Da Mensagem "Iniciando Jogo..." */
-.message-content p {
-    font-size: 1.5rem;
-    color: #fff;
-    margin: 0;
+.button:hover,
+.button:focus {
+    color: #ccc;
+    transform: translateY(-6px);
 }
 
-/* Efeito De Digitação */
-.typing-effect {
-    display: inline-block;
-    white-space: nowrap;
-    overflow: hidden;
-    border-right: 3px solid rgba(255, 255, 255, 0.75); /* Efeito de cursor */
-    animation: typing 2s steps(22) 1s 1 normal both, blink 0.35s step-end infinite; /* Animação de digitação */
+.button:hover::before,
+.button:focus::before {
+    opacity: 1;
 }
 
-@keyframes typing {
-    from { 
-        width: 0;
-    }
-    to { 
-        width: 51%; /* Ajusta o tamanho de acordo com o texto */
-    }
+/* Estilo do rodapé */
+footer {
+    text-align: center;
+    padding: 1.5rem 0; /* Aumentar o espaçamento vertical */
+    background: #000000a4; /* Cor de fundo escura */
+    color: #ffffff;
+    width: 100%;
+    margin-top: auto;
+    position: relative; /* Posiciona o rodapé em relação ao conteúdo */
 }
 
-@keyframes blink {
-    from, to { border-color: transparent; }
-    50% { border-color: white; }
+.footer-content {
+    display: flex;
+    flex-direction: column; /* Coloca os itens em coluna */
+    align-items: center; /* Centraliza os itens horizontalmente */
+}
+
+.footer-content p {
+    margin: 0.5rem 0; /* Espaçamento entre as linhas */
 }
 
 @keyframes fadeIn {
@@ -245,6 +277,3 @@ footer {
         opacity: 1;
     }
 }
-
-
-

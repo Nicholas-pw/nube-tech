@@ -4,60 +4,115 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NubeGames</title>
-    <link rel="stylesheet" href="./assets/css/jogos.css"> <!-- Link CSS -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="./assets/css/jogos.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link rel="icon" sizes="180x180" href="./assets/images/logo-nubegames.png">
 </head>
 <body>
-    <!-- Landing Page -->
+    <div id="particles-js"></div>
+    
     <header>
-        <h1>Plataforma de Jogos Da NubeTech</h1>
-        <p>Venha Se Divertir Com a NubeGames!</p>
-        <a href="#games" class="cta-button">Comece a Jogar</a>
+        <div class="header-content">
+            <h1>Descubra a NubeGames!</h1>
+            <p>Entre no mundo dos jogos e divirta-se com a NubeTech!</p>
+            <a href="#games" class="cta-button">Junte-se à Diversão</a>
+        </div>
     </header>
 
-    <!-- Section Games -->
+    <div class="video-demo">
+        <video width="640" height="360" autoplay loop muted>
+            <source src="./assets/videos/Antes da Mudança.mp4" type="video/mp4">
+            Seu navegador não suporta o elemento de vídeo.
+        </video>
+        <video width="640" height="360" autoplay loop muted>
+            <source src="./assets/videos/Criando Cenarios.mp4" type="video/mp4">
+            Seu navegador não suporta o elemento de vídeo.
+        </video>
+    </div>
+    
+    
+    
+
     <main>
         <section id="games" class="card-container">
             <div class="card">
                 <div class="card-image" style="background-image: url('./assets/images/logovalley.png');"></div>
-                <h2>Nube Valley<i class="fas fa-gamepad"></i></h2>
+                <h2>Nube Valley <i class="fas fa-gamepad"></i></h2>
                 <p>Divirta-se jogando NubeValley um jogo que você pode explorar o mundo de NubeCity!</p>
                 <button onclick="playGame('./rpg/index.html')">Jogar</button>
             </div>
             <div class="card">
                 <div class="card-image" style="background-image: url('./nubememoria/capa-nubememoria.png');"></div>
                 <h2>NubeMemória<i class="fas fa-gamepad"></i></h2>
-                <p>Se Desafie e teste a sua capacidade de memória com o jogo NubeMemória!</p>
-                <button onclick="playGame('./nubememoria/index.html')">Jogar</button>
+                <p>Teste sua memória com o mais novo jogo da NubeGames o NubeMemória!</p>
+                <button onclick="playGame('./rpg/index.html')">Jogar</button>
             </div>
-            <!--
-            <div class="card">
-                <div class="card-image" style="background-image: url('https://via.placeholder.com/300x200/d39e00/ffffff?text=Jogo+3');"></div>
-                <h2>Jogo 3 <i class="fas fa-gamepad"></i></h2>
-                <p>Entre no mundo de aventuras e conquistas!</p>
-                <button onclick="playGame('./game/index.html')">Jogar</button>
-            </div>
-            -->
         </section>
 
-        <!-- Mensagem "Iniciando Jogo..." -->
-        <div id="message" class="message hidden"> <!-- Classe hidden inicialmente -->
+        <div id="message" class="message hidden">
             <div class="message-content">
-                <p><span class="typing-effect">Iniciando Jogo...</span></p> <!-- Animação de digitação -->
+                <p><span class="typing-effect">Iniciando Jogo...</span></p>
             </div>
         </div>
-        
     </main>
 
-    <!-- Footer -->
+    <div class="wrap">
+        <button class="button exit-button" onclick="window.location.href='index.html'">Sair Da Experiência</button>
+    </div>
+    
+    
     <footer>
-        <p>&copy; 2024 NubeGames. Todos os direitos reservados.</p>
+        <div class="footer-content">
+            <p>&copy; 2024 NubeGames. Todos os direitos reservados.</p>
+        </div>
     </footer>
+    
 
-    <!-- Link JS -->
     <script src="./assets/js/jogos.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        // Inicialização das partículas
+        particlesJS("particles-js", {
+            "particles": {
+                "number": { "value": 80, "density": { "enable": true, "value_area": 800 }},
+                "color": { "value": "#ffffff" },
+                "shape": { "type": "circle", "stroke": { "width": 0, "color": "#000000" }, "polygon": { "nb_sides": 5 }},
+                "opacity": { "value": 0.5, "random": false },
+                "size": { "value": 3, "random": true },
+                "line_linked": { "enable": true, "distance": 150, "color": "#ffffff", "opacity": 0.4, "width": 1 },
+                "move": { "enable": true, "speed": 6, "direction": "none" }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": { "onhover": { "enable": true, "mode": "repulse" }, "onclick": { "enable": true, "mode": "push" }},
+                "modes": {
+                    "grab": { "distance": 400, "line_linked": { "opacity": 1 }},
+                    "bubble": { "distance": 400, "size": 40, "duration": 2, "opacity": 8, "speed": 3 },
+                    "repulse": { "distance": 200, "duration": 0.4 },
+                    "push": { "particles_nb": 4 },
+                    "remove": { "particles_nb": 2 }
+                }
+            },
+            "retina_detect": true
+        });
+
+        // Função de efeito parallax
+        let scrollPos = 0;
+        let ticking = false;
+
+        function parallaxEffect() {
+            document.getElementById('particles-js').style.transform = 'translateY(' + (scrollPos * 0.2) + 'px)';
+            ticking = false;
+        }
+
+        window.addEventListener('scroll', function () {
+            scrollPos = window.scrollY;
+            if (!ticking) {
+                window.requestAnimationFrame(parallaxEffect);
+                ticking = true;
+            }
+        });
+    </script>
 </body>
 </html>
